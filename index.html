@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow - Planner Wellness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Flow</h1>
+            <p>Planner pentru activități și rutine de wellness</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="form-section">
+            <h2>Adaugă o activitate</h2>
+
+            <form>
+                <div class="form-group">
+                    <label for="name">Numele activității</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Ex: Skincare de seară"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Categorie</label>
+
+                    <select id="category" name="category">
+                        <option>Self-care</option>
+                        <option>Sănătate</option>
+                        <option>Fitness</option>
+                        <option>Personal</option>
+                        <option>Facultate</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Prioritate</label>
+
+                    <select id="priority" name="priority">
+                        <option>Scăzută</option>
+                        <option>Medie</option>
+                        <option>Ridicată</option>
+                    </select>
+                </div>
+
+                <button type="submit">Adaugă activitatea</button>
+            </form>
+        </section>
+
+
+        <section class="activities">
+
+            <h2>Activitățile mele</h2>
+
+            <div class="card-list">
+
+                <article class="card">
+                    <div class="card-header">
+                        <span class="category">Self-care</span>
+                        <span class="priority">Prioritate medie</span>
+                    </div>
+
+                    <h3>Skincare de seară</h3>
+
+                    <p>
+                        Rutina zilnică de îngrijire a tenului.
+                    </p>
+
+                    <label class="status">
+                        <input type="checkbox">
+                        Finalizată
+                    </label>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-header">
+                        <span class="category">Sănătate</span>
+                        <span class="priority">Prioritate ridicată</span>
+                    </div>
+
+                    <h3>Administrare vitamine</h3>
+
+                    <p>
+                        Reminder pentru rutina zilnică de suplimente.
+                    </p>
+
+                    <label class="status">
+                        <input type="checkbox" checked>
+                        Finalizată
+                    </label>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-header">
+                        <span class="category">Fitness</span>
+                        <span class="priority">Prioritate scăzută</span>
+                    </div>
+
+                    <h3>30 minute de mișcare</h3>
+
+                    <p>
+                        Activitate fizică pentru rutina zilnică.
+                    </p>
+
+                    <label class="status">
+                        <input type="checkbox">
+                        Finalizată
+                    </label>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

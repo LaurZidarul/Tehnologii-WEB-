@@ -1,0 +1,334 @@
+:root {
+    --background: #fff8fc;
+    --surface: #ffffff;
+    --surface-secondary: #f9eaf3;
+
+    --text: #33272f;
+    --text-secondary: #755f6d;
+
+    --primary: #b84f83;
+    --primary-hover: #963b69;
+
+    --border: #ead7e2;
+
+    --shadow: 0 4px 16px rgba(88, 46, 68, 0.08);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: var(--background);
+    color: var(--text);
+
+    line-height: 1.5;
+}
+
+
+.header {
+    padding: 32px 24px;
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+}
+
+
+.header h1 {
+    margin: 0;
+
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+
+.header p {
+    margin: 6px 0 0;
+
+    color: var(--text-secondary);
+}
+
+
+.container {
+    width: min(1100px, 90%);
+    margin: 40px auto;
+}
+
+
+h2 {
+    margin-top: 0;
+}
+
+
+.form-section {
+    padding: 28px;
+    margin-bottom: 40px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+}
+
+
+form {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        auto;
+
+    gap: 16px;
+
+    align-items: end;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+
+label {
+    font-weight: 600;
+}
+
+
+input,
+select,
+button {
+    min-height: 44px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    font: inherit;
+}
+
+
+input,
+select {
+    border: 1px solid var(--border);
+
+    background-color: var(--surface);
+    color: var(--text);
+}
+
+
+button {
+    border: none;
+
+    padding-inline: 20px;
+
+    background-color: var(--primary);
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+
+/* Focus pentru navigarea cu tastatura */
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+
+.card-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.card {
+    padding: 22px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+
+.category,
+.priority {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+}
+
+
+.category {
+    background-color: var(--surface-secondary);
+    color: var(--primary);
+}
+
+
+.priority {
+    border: 1px solid var(--border);
+}
+
+
+.card h3 {
+    margin: 0 0 8px;
+}
+
+
+.card p {
+    color: var(--text-secondary);
+
+    min-height: 48px;
+}
+
+
+.status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+
+.status input {
+    min-height: auto;
+
+    width: 18px;
+    height: 18px;
+
+    accent-color: var(--primary);
+}
+
+
+/* Ecrane înguste */
+
+@media (max-width: 800px) {
+
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .card-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .container {
+        width: 92%;
+        margin-top: 24px;
+    }
+
+
+    .header {
+        padding: 24px 16px;
+    }
+
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+
+    .form-section {
+        padding: 20px;
+    }
+
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+
+    button {
+        width: 100%;
+    }
+
+
+    .card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+
+/* Tema întunecată */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --background: #171216;
+        --surface: #231b21;
+        --surface-secondary: #33232c;
+
+        --text: #f8edf3;
+        --text-secondary: #c9b5c0;
+
+        --primary: #e486b3;
+        --primary-hover: #f09bc3;
+
+        --border: #493440;
+
+        --shadow:
+            0 4px 16px
+            rgba(0, 0, 0, 0.25);
+    }
+
+}

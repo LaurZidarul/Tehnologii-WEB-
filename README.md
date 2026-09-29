@@ -4,7 +4,7 @@ Repository utilizat pentru evidenta progresului proiectului personal din cadrul 
 
 # Planner pentru activități și rutine de wellness
 
-## Descriere
+# Descriere
 
 Aplicația este un planner destinat organizării activităților zilnice și a rutinelor de wellness într-un singur loc.
 
@@ -12,24 +12,13 @@ Utilizatorul își poate organiza activități și rutine personale, precum ruti
 
 Pe parcursul dezvoltării, aplicația va integra și funcționalități precum remindere, monitorizarea stării de spirit, urmărirea ciclului menstrual și un mood board personal.
 
-## Model de date
-
-Elementul principal gestionat de aplicație este o *activitate*.
-
-O activitate conține:
-
-- nume;
-- stare (finalizată / nefinalizată);
-- prioritate;
-- categorie.
-
 Exemple de activități:
 
 - Skincare de seară – Self-care – prioritate medie;
 - Administrare vitamine – Sănătate – prioritate ridicată;
 - 30 de minute de mișcare – Fitness – prioritate scăzută.
 
-## Funcționalități
+# Funcționalități
 
 Aplicația va permite:
 

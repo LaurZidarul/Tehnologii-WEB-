@@ -48,5 +48,15 @@ Details per stage: see the `ai-log/` folder.
 
 ## Status
 
-- [x] Stage 1: static mockup
-- [ ] Stage 2: data logic in JavaScript
+## Stage 1 checklist
+
+| ID | Requirement | Where | How to check |
+| --- | --- | --- | --- |
+| S1-R1 | README: description, fields, sample data, how to run | [README.md](PERMALINK) | Read the README |
+| S1-R2 | AI usage section | [README.md](PERMALINK) | Read AI usage |
+| S1-R3 | AI log for Stage 1 | [etapa-01.md](PERMALINK) | Read the AI log |
+| S1-R4 | Header, form and 3 cards with own data | [index.html](PERMALINK) | Open the page |
+| S1-R5 | Finished card looks different | [style.css](PERMALINK) | Look at the completed card |
+| S1-R6 | 2 columns on desktop, 1 under 700px | [style.css](PERMALINK) | Resize below 700px |
+| S1-R7 | Visible focus and readable dark theme | [style.css](PERMALINK) | Use Tab and dark mode |
+| S1-R8 | Stage 1 commit pushed | [Stage 1 commit](LINK-COMMIT) | Check commit history |

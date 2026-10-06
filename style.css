@@ -2,102 +2,86 @@
     --background: #fff8fc;
     --surface: #ffffff;
     --surface-secondary: #f9eaf3;
-
     --text: #33272f;
     --text-secondary: #755f6d;
-
     --primary: #b84f83;
     --primary-hover: #963b69;
-
+    --primary-soft: #f7ddea;
     --border: #ead7e2;
-
+    --done-background: #f8f1f5;
+    --done-text: #8a7682;
+    --button-text: #ffffff;
     --shadow: 0 4px 16px rgba(88, 46, 68, 0.08);
+    --shadow-hover: 0 8px 24px rgba(88, 46, 68, 0.14);
 }
-
 
 * {
     box-sizing: border-box;
 }
 
-
 body {
     margin: 0;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background);
     color: var(--text);
-
     line-height: 1.5;
 }
 
-
 .header {
     padding: 32px 24px;
-
     background-color: var(--surface);
     border-bottom: 1px solid var(--border);
-
     text-align: center;
 }
 
-
 .header h1 {
     margin: 0;
-
     font-size: 2.5rem;
     color: var(--primary);
 }
 
-
 .header p {
     margin: 6px 0 0;
-
     color: var(--text-secondary);
 }
 
+.header .app-count {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+}
 
 .container {
-    width: min(1100px, 90%);
+    width: min(1100px, 92%);
     margin: 40px auto;
+    padding: 0 8px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: start;
 }
 
-
-h2 {
-    margin-top: 0;
-}
-
-
-.form-section {
+.form-section,
+.activities {
     padding: 28px;
-    margin-bottom: 40px;
-
     background-color: var(--surface);
-
     border: 1px solid var(--border);
     border-radius: 18px;
-
     box-shadow: var(--shadow);
 }
 
-
-form {
-    display: grid;
-
-    grid-template-columns:
-        2fr
-        1fr
-        1fr
-        auto;
-
-    gap: 16px;
-
-    align-items: end;
+h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+    color: var(--text);
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
 
 .form-group {
     display: flex;
@@ -105,230 +89,202 @@ form {
     gap: 7px;
 }
 
-
 label {
     font-weight: 600;
 }
-
 
 input,
 select,
 button {
     min-height: 44px;
-
     padding: 10px 12px;
-
     border-radius: 10px;
-
     font: inherit;
 }
 
-
 input,
 select {
+    width: 100%;
     border: 1px solid var(--border);
-
     background-color: var(--surface);
     color: var(--text);
 }
 
+input::placeholder {
+    color: var(--text-secondary);
+}
 
 button {
     border: none;
-
     padding-inline: 20px;
-
     background-color: var(--primary);
-    color: white;
-
+    color: var(--button-text);
     cursor: pointer;
-
     font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
 
 button:hover {
     background-color: var(--primary-hover);
+    transform: translateY(-1px);
 }
 
-
-/* Focus pentru navigarea cu tastatura */
-
-input:focus-visible,
-select:focus-visible,
-button:focus-visible {
+:focus-visible {
     outline: 3px solid var(--primary);
     outline-offset: 3px;
 }
 
-
 .card-list {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
-
 
 .card {
-    padding: 22px;
-
+    padding: 20px;
     background-color: var(--surface);
-
     border: 1px solid var(--border);
-    border-radius: 18px;
-
+    border-radius: 16px;
     box-shadow: var(--shadow);
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
 }
 
+.card:hover {
+    border-color: var(--primary);
+    background-color: var(--primary-soft);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
 
 .card-header {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 18px;
+    gap: 10px;
+    margin-bottom: 14px;
 }
-
 
 .category,
 .priority {
     display: inline-block;
-
-    padding: 5px 9px;
-
-    border-radius: 20px;
-
+    padding: 5px 10px;
+    border-radius: 999px;
     font-size: 0.8rem;
 }
-
 
 .category {
     background-color: var(--surface-secondary);
     color: var(--primary);
 }
 
-
 .priority {
     border: 1px solid var(--border);
+    color: var(--text-secondary);
 }
-
 
 .card h3 {
     margin: 0 0 8px;
+    color: var(--text);
 }
-
 
 .card p {
+    margin: 0;
     color: var(--text-secondary);
-
-    min-height: 48px;
 }
-
 
 .status {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     margin-top: 18px;
 }
 
-
 .status input {
     min-height: auto;
-
     width: 18px;
     height: 18px;
-
     accent-color: var(--primary);
 }
 
-
-/* Ecrane înguste */
-
-@media (max-width: 800px) {
-
-    form {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    .card-list {
-        grid-template-columns: 1fr;
-    }
-
+.card.done {
+    background-color: var(--done-background);
 }
 
+.card.done h3 {
+    text-decoration: line-through;
+    color: var(--done-text);
+}
 
-@media (max-width: 520px) {
+.card.done p {
+    color: var(--done-text);
+}
 
+.empty {
+    padding: 16px;
+    text-align: center;
+    color: var(--text-secondary);
+    background-color: var(--surface-secondary);
+    border-radius: 12px;
+}
+
+.app-footer {
+    margin-top: 40px;
+    padding: 24px;
+    text-align: center;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+@media (max-width: 700px) {
     .container {
+        grid-template-columns: 1fr;
         width: 92%;
         margin-top: 24px;
     }
-
 
     .header {
         padding: 24px 16px;
     }
 
-
     .header h1 {
         font-size: 2rem;
     }
 
-
-    .form-section {
+    .form-section,
+    .activities {
         padding: 20px;
     }
-
-
-    form {
-        grid-template-columns: 1fr;
-    }
-
-
-    button {
-        width: 100%;
-    }
-
 
     .card-header {
         align-items: flex-start;
         flex-direction: column;
     }
 
+    button {
+        width: 100%;
+    }
 }
 
-
-/* Tema întunecată */
-
 @media (prefers-color-scheme: dark) {
-
     :root {
         --background: #171216;
         --surface: #231b21;
         --surface-secondary: #33232c;
-
         --text: #f8edf3;
         --text-secondary: #c9b5c0;
-
         --primary: #e486b3;
         --primary-hover: #f09bc3;
-
+        --primary-soft: #35252e;
         --border: #493440;
-
-        --shadow:
-            0 4px 16px
-            rgba(0, 0, 0, 0.25);
+        --done-background: #2c2228;
+        --done-text: #b9a4af;
+        --button-text: #23131c;
+        --shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
-
 }

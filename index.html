@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
         <div>
             <h1>Flow</h1>
             <p>Planner pentru activități și rutine de wellness</p>
+            <p class="app-count">3 activități, dintre care 2 active</p>
         </div>
     </header>
 
@@ -22,6 +24,7 @@
             <h2>Adaugă o activitate</h2>
 
             <form>
+
                 <div class="form-group">
                     <label for="name">Numele activității</label>
                     <input
@@ -55,6 +58,7 @@
                 </div>
 
                 <button type="submit">Adaugă activitatea</button>
+
             </form>
         </section>
 
@@ -63,9 +67,13 @@
 
             <h2>Activitățile mele</h2>
 
+            <!-- Mesaj pregătit pentru etapele următoare, când lista va fi goală -->
+            <!-- <p class="empty">Nu există nicio activitate.</p> -->
+
             <div class="card-list">
 
                 <article class="card">
+
                     <div class="card-header">
                         <span class="category">Self-care</span>
                         <span class="priority">Prioritate medie</span>
@@ -81,10 +89,12 @@
                         <input type="checkbox">
                         Finalizată
                     </label>
+
                 </article>
 
 
-                <article class="card">
+                <article class="card done">
+
                     <div class="card-header">
                         <span class="category">Sănătate</span>
                         <span class="priority">Prioritate ridicată</span>
@@ -100,10 +110,12 @@
                         <input type="checkbox" checked>
                         Finalizată
                     </label>
+
                 </article>
 
 
                 <article class="card">
+
                     <div class="card-header">
                         <span class="category">Fitness</span>
                         <span class="priority">Prioritate scăzută</span>
@@ -119,6 +131,7 @@
                         <input type="checkbox">
                         Finalizată
                     </label>
+
                 </article>
 
             </div>
@@ -127,5 +140,10 @@
 
     </main>
 
+    <footer class="app-footer">
+        Proiect Tehnologii Web
+    </footer>
+
 </body>
+
 </html>

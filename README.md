@@ -60,3 +60,17 @@ Details per stage: see the `ai-log/` folder.
 | S1-R6 | 2 columns on desktop, 1 under 700px | [style.css](PERMALINK) | Resize below 700px |
 | S1-R7 | Visible focus and readable dark theme | [style.css](PERMALINK) | Use Tab and dark mode |
 | S1-R8 | Stage 1 commit pushed | [Stage 1 commit](LINK-COMMIT) | Check commit history |
+
+
+## Stage 2 checklist
+
+| ID | Requirement | Where | How to check |
+| --- | --- | --- | --- |
+| S2-R1 | JS file linked, logs on page load | [index.html](PERMALINK) | Open page, F12 |
+| S2-R2 | 3+ activities with id, name, state, priority | [activitati.js](PERMALINK) | Read the array |
+| S2-R3 | List, count, search, add, toggle, delete | [activitati.js](PERMALINK) | Check console output |
+| S2-R4 | Add rejects empty name and invalid priority | [activitati.js](PERMALINK) | Check validation messages |
+| S2-R5 | Original array unchanged after adding | [activitati.js](PERMALINK) | Check original array length |
+| S2-R6 | README Stage 2 section and AI log | [README.md](PERMALINK), [etapa-02.md](PERMALINK) | Read documentation |
+| S2-R7 | Stage 2 commit pushed | [Stage 2 commit](LINK-COMMIT) | Check commit history |
+

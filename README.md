@@ -36,7 +36,21 @@ Sample data used across all stages:
 
 ## How to run
 
-Open `index.html` in a browser. No build step, no server.
+The application is built with React and Vite.
+
+To run the application locally:
+
+cd frontend
+npm install
+npm run dev
+
+Open the local address displayed in the terminal (usually http://localhost:5173/).
+
+To verify the production build:
+
+npm run build
+
+The original HTML/CSS version from Stage 1 is preserved in the mockup/ folder.
 
 ## AI usage
 
@@ -74,3 +88,14 @@ Details per stage: see the `ai-log/` folder.
 | S2-R6 | README Stage 2 section and AI log | [README.md](PERMALINK), [etapa-02.md](PERMALINK) | Read documentation |
 | S2-R7 | Stage 2 commit pushed | [Stage 2 commit](LINK-COMMIT) | Check commit history |
 
+## Stage 3 checklist
+
+| ID | Requirement | Where | How to check |
+|---|---|---|---|
+| S3-R1 | Vite development server starts without errors | [package.json](frontend/package.json) | Run `npm install` and `npm run dev` |
+| S3-R2 | Application name and dynamically calculated counter | [App.jsx](frontend/src/App.jsx) | Change activity data and check the counter |
+| S3-R3 | Activity data matches the README | [App.jsx](frontend/src/App.jsx) | Compare the data with the README |
+| S3-R4 | Stage 1 CSS styles are reused | [app.css](frontend/src/app.css) | Open the application and check the styling |
+| S3-R5 | Dependencies are ignored and the build succeeds | [.gitignore](frontend/.gitignore) | Check Git status and run `npm run build` |
+| S3-R6 | README and Stage 3 AI log are completed | [README.md](README.md), [etapa-03.md](ai-log/etapa-03.md) | Read the documentation |
+| S3-R7 | Stage 3 commit is published on GitHub | Commit link to be added | Check the commit history |

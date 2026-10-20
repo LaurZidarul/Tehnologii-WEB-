@@ -99,3 +99,16 @@ Details per stage: see the `ai-log/` folder.
 | S3-R5 | Dependencies are ignored and the build succeeds | [.gitignore](frontend/.gitignore) | Check Git status and run `npm run build` |
 | S3-R6 | README and Stage 3 AI log are completed | [README.md](README.md), [etapa-03.md](ai-log/etapa-03.md) | Read the documentation |
 | S3-R7 | Stage 3 commit is published on GitHub | Commit link to be added | Check the commit history |
+
+
+## Stage 4 checklist
+
+| ID | Requirement | Where | How to check |
+|---|---|---|---|
+| S4-R1 | At least two components in `src/components/` | [components](frontend/src/components/) | Open the folder |
+| S4-R2 | Activity card receives data through props | [ActivityCard.jsx](frontend/src/components/ActivityCard.jsx) | Check the component's props |
+| S4-R3 | List uses `.map()` and a unique `key`, without React warnings | [ActivityList.jsx](frontend/src/components/ActivityList.jsx) | Open the browser console (F12) |
+| S4-R4 | Empty list displays a message | [ActivityList.jsx](frontend/src/components/ActivityList.jsx) | Temporarily replace the activities array with `[]` |
+| S4-R5 | Completion status changes the card appearance | [ActivityCard.jsx](frontend/src/components/ActivityCard.jsx) | Change the `completed` value and check the card |
+| S4-R6 | README and Stage 4 AI log are completed | [README.md](README.md), [etapa-04.md](ai-log/etapa-04.md) | Read the documentation |
+| S4-R7 | Stage 4 commit is published on GitHub | Commit link to be added | Check the commit history |

@@ -1,0 +1,700 @@
+
+:root {
+    --background: #faf8f3;
+    --surface: #fffdfa;
+    --surface-secondary: #f7e9ee;
+    --text: #455a49;
+    --text-secondary: #806d77;
+    --primary: #78947c;
+    --primary-hover: #58745d;
+    --primary-soft: #e3ecdf;
+    --border: #dce4d8;
+    --done-background: #e8ede4;
+    --done-text: #788b79;
+    --button-text: #ffffff;
+    --shadow: 0 5px 18px rgba(82, 107, 87, 0.08);
+    --shadow-hover: 0 12px 28px rgba(82, 107, 87, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.header {
+    padding: 32px 24px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.header p {
+    margin: 6px 0 0;
+    color: var(--text-secondary);
+}
+
+.header .app-count {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 42px auto;
+    padding: 0 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.form-section,
+.activities {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    margin: 0 0 26px;
+    color: #526c58;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+select,
+button {
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font: inherit;
+}
+
+input,
+select {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+}
+
+input::placeholder {
+    color: var(--text-secondary);
+}
+
+button {
+    border: none;
+    padding-inline: 20px;
+    background: var(--primary);
+    color: var(--button-text);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+:focus-visible {
+    outline: 3px solid #b9849f;
+    outline-offset: 3px;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.card {
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.category,
+.priority {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+
+.category {
+    background: var(--surface-secondary);
+    color: #a46c88;
+}
+
+.priority {
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.card h3 {
+    margin: 0 0 8px;
+    color: var(--text);
+}
+
+.card p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.status input {
+    min-height: auto;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+}
+
+.card.done {
+    background: var(--done-background);
+}
+
+.card.done h3 {
+    text-decoration: line-through;
+    color: var(--done-text);
+}
+
+.card.done p {
+    color: var(--done-text);
+}
+
+.empty {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    background: #f7e9ee;
+    border: 1px solid #efdce5;
+    border-radius: 16px;
+}
+
+.app-footer {
+    margin-top: 40px;
+    padding: 24px;
+    text-align: center;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+}
+
+/* Botanical leaf cards */
+
+.activity-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+}
+
+.activity-card {
+    position: relative;
+    aspect-ratio: 1 / 1.08;
+    min-width: 0;
+    padding: 46px 36px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    text-align: center;
+
+    background: #d5e4d0;
+    border: 1px solid #b8cdb4;
+    border-radius: 4% 78% 6% 78% / 5% 78% 6% 78%;
+    box-shadow: 0 12px 25px rgba(82, 107, 87, 0.11);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.activity-card:nth-child(2n) {
+    background: #e4ebde;
+}
+
+.activity-card:nth-child(3n) {
+    background: #c9dcc5;
+}
+
+.activity-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 30px rgba(82, 107, 87, 0.18);
+}
+
+.activity-card h3 {
+    margin: 0;
+    max-width: 190px;
+    color: #49674f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.activity-card p {
+    margin: 0;
+    color: #526b57;
+}
+
+.activity-card .priority {
+    display: inline-block;
+    max-width: 100%;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.76rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.priority-low {
+    background: #edf5e8;
+    color: #42724b !important;
+    border-color: #c5d9be;
+}
+
+.priority-medium {
+    background: #f8e9ef;
+    color: #9d6782 !important;
+    border-color: #e9cbd8;
+}
+
+.priority-high {
+    background: #f3dce6;
+    color: #9c5377 !important;
+    border-color: #e6b9cc;
+}
+
+.activity-card .status {
+    display: block;
+    margin: 0;
+    color: #58755e;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.activity-card.done,
+.activity-card.done:nth-child(n) {
+    background: #e8ede4;
+    border-color: #cbd7c7;
+    box-shadow: 0 8px 18px rgba(82, 107, 87, 0.07);
+}
+
+.activity-card.done h3 {
+    color: #7d917f;
+    text-decoration: line-through;
+}
+
+.activity-card.done .status {
+    color: #718774;
+}
+
+/* Botanical header */
+
+.botanical-header {
+    background: linear-gradient(
+        120deg,
+        #e7ede3 0%,
+        #f4e7ed 65%,
+        #faf7f2 100%
+    );
+    border-bottom: 1px solid #d5dfd1;
+    padding: 45px 30px;
+    overflow: hidden;
+}
+
+.header-content {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.header-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #78917a;
+}
+
+.botanical-header h1 {
+    margin-top: 12px;
+    color: #526c58;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.botanical-header .header-subtitle {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #a1718c;
+    margin-top: 10px;
+}
+
+.header-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.stat-pill {
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stat-pink {
+    background: #f8e5ed;
+    color: #a05d7a;
+}
+
+.stat-sage {
+    background: #ffffff;
+    color: #526c58;
+    border: 1px solid #d5dfd1;
+}
+
+.botanical-illustration {
+    width: min(240px, 35%);
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+    .container {
+        width: 92%;
+        margin-top: 24px;
+        padding: 0;
+    }
+
+    .header {
+        padding: 24px 16px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .form-section,
+    .activities {
+        padding: 20px;
+    }
+
+    .card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .activity-list {
+        grid-template-columns: minmax(0, 300px);
+        gap: 25px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .header-stats {
+        justify-content: center;
+    }
+
+    .botanical-illustration {
+        width: 150px;
+    }
+}
+
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #19221c;
+        --surface: #243027;
+        --surface-secondary: #3a3039;
+        --text: #eef3eb;
+        --text-secondary: #c9b9c2;
+        --primary: #aac6aa;
+        --primary-hover: #c1d7bc;
+        --primary-soft: #34483a;
+        --border: #465649;
+        --done-background: #354439;
+        --done-text: #afc2ae;
+        --button-text: #1c2b20;
+        --shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+        color: #c8dcc5;
+    }
+
+    .activity-card,
+    .activity-card:nth-child(2n),
+    .activity-card:nth-child(3n) {
+        background: #3b5540;
+        border-color: #59745d;
+    }
+
+    .activity-card h3,
+    .activity-card p,
+    .activity-card .status {
+        color: #e5f0df;
+    }
+
+    .activity-card.done,
+    .activity-card.done:nth-child(n) {
+        background: #344539;
+        border-color: #526854;
+    }
+
+    .activity-card.done h3,
+    .activity-card.done .status {
+        color: #b7cbb4;
+    }
+
+    .priority-low {
+        background: #284331;
+        color: #b8dfbd !important;
+        border-color: #55745b;
+    }
+
+    .priority-medium {
+        background: #543c4b;
+        color: #f4c8da !important;
+        border-color: #785569;
+    }
+
+    .priority-high {
+        background: #653b51;
+        color: #ffd0e1 !important;
+        border-color: #87566e;
+    }
+
+    .empty {
+        background: #3a3039;
+        border-color: #654b5a;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .activity-card,
+    .card,
+    button {
+        transition: none;
+    }
+
+    .activity-card:hover,
+    .card:hover,
+    button:hover {
+        transform: none;
+    }
+}
+
+.friendship-section {
+    width: 100%;
+    margin: 35px auto;
+    padding: 35px;
+    background: linear-gradient(
+        120deg,
+        #e8eee4,
+        #f6e8ee
+    );
+    border: 1px solid #dce4d8;
+    border-radius: 24px;
+}
+
+.friendship-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.polaroid {
+    flex: 0 0 240px;
+    width: 240px;
+    padding: 10px 10px 18px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 3px;
+    box-shadow: 0 8px 25px rgba(82, 107, 87, 0.13);
+    transform: rotate(-4deg);
+    transition: transform 0.3s ease;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) translateY(-4px);
+}
+
+.polaroid .friends-photo {
+    display: block;
+    width: 100%;
+    height: 165px;
+    max-width: 100%;
+    object-fit: contain;
+    background: #e7e7df;
+    opacity: 0.92;
+    border-radius: 2px;
+}
+
+.polaroid-caption {
+    margin: 12px 0 0;
+    text-align: center;
+    color: #9f8191;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.friendship-text {
+    flex: 1;
+    min-width: 0;
+    max-width: 450px;
+}
+
+.friendship-eyebrow {
+    color: #a07c90;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.friendship-text h2 {
+    margin: 15px 0;
+    color: #526c58;
+    font-family: Georgia, serif;
+    font-size: 1.7rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.friendship-description {
+    color: #82717b;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.friendship-signature {
+    margin-top: 20px;
+    color: #b17c98;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: right;
+}
+
+@media (max-width: 700px) {
+    .friendship-section {
+        padding: 30px 18px;
+    }
+
+    .friendship-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .polaroid {
+        flex: none;
+        width: 240px;
+        max-width: 100%;
+    }
+
+    .friendship-text {
+        text-align: center;
+    }
+
+    .friendship-signature {
+        text-align: center;
+    }
+}

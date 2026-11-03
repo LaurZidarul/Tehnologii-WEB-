@@ -1,16 +1,44 @@
-# React + Vite
+# Planner Wellness – React Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This folder contains the React and Vite implementation of the Planner Wellness application.
 
-Currently, two official plugins are available:
+The application displays wellness activities fetched from a mock REST API using JSON Server.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How to run
 
-## React Compiler
+Install dependencies:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+Start the mock API:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run api
+```
+
+In a second terminal, start the React application:
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:5173/` in your browser.
+
+The API is available at `http://localhost:3001/activities`.
+
+## Features
+
+- Fetch activities using `useEffect` and the Fetch API.
+- Display loading and error messages.
+- Toggle activity completion.
+- Delete activities locally.
+- Display dynamic activity counters.
+- Switch between light and dark themes.
+
+Activity changes are currently stored only in React state and are not persisted to the API.
+
+## Documentation
+
+For the complete project description, development stages, checklists and AI usage documentation, see the [main README](../README.md).

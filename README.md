@@ -1,6 +1,6 @@
 # Tehnologii-WEB-Planner-wellness
 
-Repository utilizat pentru evidenta progresului proiectului personal din cadrul materiei Tehnologii WEB. 
+Repository utilizat pentru evidenta progresului proiectului personal din cadrul materiei Tehnologii WEB.
 
 # Planner pentru activități și rutine de wellness
 
@@ -21,7 +21,7 @@ Exemple de activități:
 ## Data model
 
 | Field | Type | Notes |
-| ----------- | ------------ | ------------------------------------ |
+|---|---|---|
 | name | text | required, max 100 chars |
 | completed | boolean | toggled from the list, default false |
 | priority | fixed values | Low, Medium, High |
@@ -40,23 +40,27 @@ The application is built with React and Vite.
 
 To run the application locally:
 
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 Open the local address displayed in the terminal (usually http://localhost:5173/).
 
 To verify the production build:
 
+```bash
 npm run build
+```
 
 The original HTML/CSS version from Stage 1 is preserved in the mockup/ folder.
 
 ## AI usage
 
 | Tool | Used for |
-| -------------- | ----------------------------------------- |
-| ChatGPT (OpenAI) | Defining the application theme and data model, drafting the README, and assistance with the Stage 1 HTML and CSS structure |
+|---|---|
+| ChatGPT (OpenAI) | Defining the application theme and data model, drafting the README, assistance with HTML/CSS and JavaScript, React components, state management, event handling, theme switching, and debugging |
 
 Details per stage: see the `ai-log/` folder.
 
@@ -65,7 +69,7 @@ Details per stage: see the `ai-log/` folder.
 ## Stage 1 checklist
 
 | ID | Requirement | Where | How to check |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | S1-R1 | README: description, fields, sample data, how to run | [README.md](PERMALINK) | Read the README |
 | S1-R2 | AI usage section | [README.md](PERMALINK) | Read AI usage |
 | S1-R3 | AI log for Stage 1 | [etapa-01.md](PERMALINK) | Read the AI log |
@@ -75,11 +79,10 @@ Details per stage: see the `ai-log/` folder.
 | S1-R7 | Visible focus and readable dark theme | [style.css](PERMALINK) | Use Tab and dark mode |
 | S1-R8 | Stage 1 commit pushed | [Stage 1 commit](LINK-COMMIT) | Check commit history |
 
-
 ## Stage 2 checklist
 
 | ID | Requirement | Where | How to check |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | S2-R1 | JS file linked, logs on page load | [index.html](PERMALINK) | Open page, F12 |
 | S2-R2 | 3+ activities with id, name, state, priority | [activitati.js](PERMALINK) | Read the array |
 | S2-R3 | List, count, search, add, toggle, delete | [activitati.js](PERMALINK) | Check console output |
@@ -100,7 +103,6 @@ Details per stage: see the `ai-log/` folder.
 | S3-R6 | README and Stage 3 AI log are completed | [README.md](README.md), [etapa-03.md](ai-log/etapa-03.md) | Read the documentation |
 | S3-R7 | Stage 3 commit is published on GitHub | Commit link to be added | Check the commit history |
 
-
 ## Stage 4 checklist
 
 | ID | Requirement | Where | How to check |
@@ -112,3 +114,16 @@ Details per stage: see the `ai-log/` folder.
 | S4-R5 | Completion status changes the card appearance | [ActivityCard.jsx](frontend/src/components/ActivityCard.jsx) | Change the `completed` value and check the card |
 | S4-R6 | README and Stage 4 AI log are completed | [README.md](README.md), [etapa-04.md](ai-log/etapa-04.md) | Read the documentation |
 | S4-R7 | Stage 4 commit is published on GitHub | Commit link to be added | Check the commit history |
+
+## Stage 5 checklist
+
+| ID | Requirement | Where | How to check |
+|---|---|---|---|
+| S5-R1 | Activity list is managed using `useState` | [App.jsx](frontend/src/App.jsx) | Check state initialization |
+| S5-R2 | Activities can be marked as completed or active | [App.jsx](frontend/src/App.jsx), [ActivityCard.jsx](frontend/src/components/ActivityCard.jsx) | Toggle the checkbox and check the card |
+| S5-R3 | Activities can be deleted from the list | [App.jsx](frontend/src/App.jsx), [ActivityCard.jsx](frontend/src/components/ActivityCard.jsx) | Click Delete and check that the card disappears |
+| S5-R4 | Activity counter updates automatically | [App.jsx](frontend/src/App.jsx) | Toggle or delete an activity and check the counter |
+| S5-R5 | State updates are immutable using `map()` and `filter()` | [App.jsx](frontend/src/App.jsx) | Inspect the state update functions |
+| S5-R6 | Light/dark mode switching and system theme preference | [App.jsx](frontend/src/App.jsx), [app.css](frontend/src/app.css) | Toggle the theme and verify the initial system preference |
+| S5-R7 | README and Stage 5 AI log are completed | [README.md](README.md), [etapa-05.md](ai-log/etapa-05.md) | Read the documentation |
+| S5-R8 | Stage 5 commit is published on GitHub | Commit link to be added | Check the commit history |

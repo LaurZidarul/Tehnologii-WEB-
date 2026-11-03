@@ -127,3 +127,16 @@ Details per stage: see the `ai-log/` folder.
 | S5-R6 | Light/dark mode switching and system theme preference | [App.jsx](frontend/src/App.jsx), [app.css](frontend/src/app.css) | Toggle the theme and verify the initial system preference |
 | S5-R7 | README and Stage 5 AI log are completed | [README.md](README.md), [etapa-05.md](ai-log/etapa-05.md) | Read the documentation |
 | S5-R8 | Stage 5 commit is published on GitHub | Commit link to be added | Check the commit history |
+
+## Stage 6 checklist
+
+| ID | Requirement | Where | How to check |
+|---|---|---|---|
+| S6-R1 | Mock REST API configured with JSON Server and 5 activities | [db.json](frontend/db.json), [package.json](frontend/package.json) | Run `npm run api` and open `http://localhost:3001/activities` |
+| S6-R2 | API URL configuration and reusable fetch function | [api.js](frontend/src/api.js), [.env.example](frontend/.env.example) | Check the API URL and `fetchActivities()` function |
+| S6-R3 | Activities are fetched using `useEffect` | [App.jsx](frontend/src/App.jsx) | Start both servers and verify that 5 activities appear |
+| S6-R4 | Loading state is implemented | [App.jsx](frontend/src/App.jsx), [app.css](frontend/src/app.css) | Refresh the page and check the loading message |
+| S6-R5 | API errors are handled and displayed | [App.jsx](frontend/src/App.jsx) | Stop the API server, refresh the page and check the error message |
+| S6-R6 | Existing activity interactions and theme functionality are preserved | [App.jsx](frontend/src/App.jsx) | Test Toggle, Delete and Light/Dark mode |
+| S6-R7 | README and Stage 6 AI log are completed | [README.md](README.md), [etapa6.md](ai-log/etapa6.md) | Read the documentation |
+| S6-R8 | Stage 6 commit is published on GitHub | Commit link to be added | Check the commit history |

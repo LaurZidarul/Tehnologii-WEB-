@@ -1,0 +1,40 @@
+
+{
+  "activities": [
+    {
+      "id": 1,
+      "name": "Evening skincare",
+      "completed": false,
+      "priority": "Medium",
+      "category": "Self-care"
+    },
+    {
+      "id": 2,
+      "name": "Take daily vitamins",
+      "completed": true,
+      "priority": "High",
+      "category": "Health"
+    },
+    {
+      "id": 3,
+      "name": "30-minute workout",
+      "completed": false,
+      "priority": "Low",
+      "category": "Fitness"
+    },
+    {
+      "id": 4,
+      "name": "Morning meditation",
+      "completed": false,
+      "priority": "Medium",
+      "category": "Self-care"
+    },
+    {
+      "id": 5,
+      "name": "Drink 2 liters of water",
+      "completed": true,
+      "priority": "High",
+      "category": "Health"
+    }
+  ]
+}

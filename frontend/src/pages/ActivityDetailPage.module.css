@@ -1,0 +1,83 @@
+
+.detail {
+  width: 100%;
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 36px;
+  background: var(--surface, #ffffff);
+  border: 1px solid #c5d6c1;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(82, 107, 87, 0.1);
+}
+
+.detail h2 {
+  margin: 0 0 24px;
+  color: #526b57;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 500;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.info p {
+  margin: 0;
+  color: var(--text, #526b57);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info strong {
+  font-weight: 600;
+}
+
+.back {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #78947c;
+  color: #ffffff;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.back:hover {
+  background: #58745d;
+}
+
+.back:focus-visible {
+  outline: 3px solid #b9849f;
+  outline-offset: 3px;
+}
+
+:global(:root[data-theme="dark"]) .detail {
+  background: #304435;
+  border-color: #59745d;
+}
+
+:global(:root[data-theme="dark"]) .detail h2,
+:global(:root[data-theme="dark"]) .info p {
+  color: #e5f0df;
+}
+
+:global(:root[data-theme="dark"]) .back {
+  background: #aac6aa;
+  color: #1c2b20;
+}
+
+:global(:root[data-theme="dark"]) .back:hover {
+  background: #c1d7bc;
+}
+
+@media (max-width: 600px) {
+  .detail {
+    margin: 24px auto;
+    padding: 24px;
+  }
+}

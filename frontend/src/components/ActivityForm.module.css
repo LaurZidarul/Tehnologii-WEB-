@@ -1,0 +1,90 @@
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.label {
+  color: var(--text, #526b57);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.input,
+.select {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 14px;
+  border: 1px solid #c5d6c1;
+  border-radius: 12px;
+  background: var(--surface, #ffffff);
+  color: var(--text, #526b57);
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.input:focus-visible,
+.select:focus-visible {
+  outline: 2px solid #78947c;
+  outline-offset: 2px;
+}
+
+.input::placeholder {
+  color: #89988a;
+}
+
+.button {
+  min-height: 44px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #78947c;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+  background: #58745d;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  margin: 0;
+  color: #b84f83;
+  font-size: 0.85rem;
+}
+
+:global(:root[data-theme="dark"]) .label {
+  color: #e5f0df;
+}
+
+:global(:root[data-theme="dark"]) .input,
+:global(:root[data-theme="dark"]) .select {
+  background: #304435;
+  color: #e5f0df;
+  border-color: #59745d;
+}
+
+:global(:root[data-theme="dark"]) .button {
+  background: #aac6aa;
+  color: #1c2b20;
+}
+
+:global(:root[data-theme="dark"]) .button:hover:not(:disabled) {
+  background: #c1d7bc;
+}

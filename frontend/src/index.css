@@ -1,0 +1,459 @@
+
+:root {
+  --background: #faf8f3;
+  --surface: #fffdfa;
+  --surface-secondary: #f7e9ee;
+  --text: #455a49;
+  --text-secondary: #806d77;
+  --primary: #78947c;
+  --primary-hover: #58745d;
+  --primary-soft: #e3ecdf;
+  --border: #dce4d8;
+  --done-background: #e8ede4;
+  --done-text: #788b79;
+  --button-text: #ffffff;
+  --shadow: 0 5px 18px rgba(82, 107, 87, 0.08);
+  --shadow-hover: 0 12px 28px rgba(82, 107, 87, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 42px auto;
+  padding: 0 8px;
+}
+
+.header {
+  padding: 32px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+}
+
+.wellness-form-section {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+
+.wellness-activities-section {
+  min-width: 0;
+}
+
+h2 {
+  margin: 0 0 26px;
+  color: #526c58;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid #b9849f;
+  outline-offset: 3px;
+}
+
+.empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  background: #f7e9ee;
+  border: 1px solid #efdce5;
+  border-radius: 16px;
+}
+
+.botanical-header {
+  background: linear-gradient(
+    120deg,
+    #e7ede3 0%,
+    #f4e7ed 65%,
+    #faf7f2 100%
+  );
+  border-bottom: 1px solid #d5dfd1;
+  padding: 45px 30px;
+  overflow: hidden;
+}
+
+.header-content {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-text {
+  text-align: left;
+}
+
+.header-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #78917a;
+}
+
+.botanical-header h1 {
+  margin-top: 12px;
+  color: #526c58;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.botanical-header .header-subtitle {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #a1718c;
+  margin-top: 10px;
+}
+
+.header-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.stat-pink {
+  background: #f8e5ed;
+  color: #a05d7a;
+}
+
+.stat-sage {
+  background: #ffffff;
+  color: #526c58;
+  border: 1px solid #d5dfd1;
+}
+
+.botanical-illustration {
+  width: min(240px, 35%);
+  height: auto;
+  object-fit: contain;
+}
+
+.theme-toggle {
+  width: auto;
+  min-height: 44px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 999px;
+  padding: 9px 18px;
+  background: var(--primary);
+  color: var(--button-text);
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--primary-hover);
+}
+
+.friendship-section {
+  width: 100%;
+  margin: 35px auto;
+  padding: 35px;
+  background: linear-gradient(120deg, #e8eee4, #f6e8ee);
+  border: 1px solid #dce4d8;
+  border-radius: 24px;
+}
+
+.friendship-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.polaroid {
+  flex: 0 0 240px;
+  width: 240px;
+  padding: 10px 10px 18px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 3px;
+  box-shadow: 0 8px 25px rgba(82, 107, 87, 0.13);
+  transform: rotate(-4deg);
+  transition: transform 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.polaroid .friends-photo {
+  display: block;
+  width: 100%;
+  height: 165px;
+  max-width: 100%;
+  object-fit: contain;
+  background: #e7e7df;
+  opacity: 0.92;
+  border-radius: 2px;
+}
+
+.polaroid-caption {
+  margin: 12px 0 0;
+  text-align: center;
+  color: #9f8191;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.friendship-text {
+  flex: 1;
+  min-width: 0;
+  max-width: 450px;
+}
+
+.friendship-eyebrow {
+  color: #a07c90;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.friendship-text h2 {
+  margin: 15px 0;
+  color: #526c58;
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.friendship-description {
+  color: #82717b;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.friendship-signature {
+  margin-top: 20px;
+  color: #b17c98;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  text-align: right;
+}
+
+.loading-message,
+.error-message {
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.loading-message {
+  background: #edf4ee;
+  color: #526b58;
+}
+
+.error-message {
+  background: #f8e8ee;
+  color: #a43d60;
+}
+
+:root[data-theme="dark"] {
+  --background: #19221c;
+  --surface: #243027;
+  --surface-secondary: #3a3039;
+  --text: #eef3eb;
+  --text-secondary: #c9b9c2;
+  --primary: #aac6aa;
+  --primary-hover: #c1d7bc;
+  --primary-soft: #34483a;
+  --border: #465649;
+  --done-background: #354439;
+  --done-text: #afc2ae;
+  --button-text: #1c2b20;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme="dark"] h2 {
+  color: #c8dcc5;
+}
+
+:root[data-theme="dark"] .empty {
+  background: #3a3039;
+  border-color: #654b5a;
+}
+
+:root[data-theme="dark"] .botanical-header {
+  background: linear-gradient(
+    120deg,
+    #293c30 0%,
+    #3b303b 65%,
+    #19221c 100%
+  );
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .header-eyebrow,
+:root[data-theme="dark"] .botanical-header h1 {
+  color: #d1e3ca;
+}
+
+:root[data-theme="dark"] .botanical-header .header-subtitle {
+  color: #e0b2cb;
+}
+
+:root[data-theme="dark"] .stat-pink {
+  background: #583b4b;
+  color: #f5c4d9;
+}
+
+:root[data-theme="dark"] .stat-sage {
+  background: #304435;
+  color: #d4e7cf;
+  border-color: #526854;
+}
+
+:root[data-theme="dark"] .friendship-section {
+  background: linear-gradient(120deg, #2c4133, #42333e);
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .friendship-text h2 {
+  color: #d3e5cd;
+}
+
+:root[data-theme="dark"] .friendship-eyebrow,
+:root[data-theme="dark"] .friendship-description,
+:root[data-theme="dark"] .friendship-signature {
+  color: #e1bbd0;
+}
+
+:root[data-theme="dark"] .polaroid {
+  background: rgba(245, 237, 239, 0.16);
+  border-color: rgba(245, 237, 239, 0.24);
+}
+
+:root[data-theme="dark"] .polaroid-caption {
+  color: #f0c7da;
+}
+
+:root[data-theme="dark"] .loading-message {
+  background: #293b30;
+  color: #d2e5d5;
+}
+
+:root[data-theme="dark"] .error-message {
+  background: #492d38;
+  color: #ffd2df;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 92%;
+    margin-top: 24px;
+    padding: 0;
+  }
+
+  .header {
+    padding: 24px 16px;
+  }
+
+  .wellness-form-section {
+    padding: 20px;
+  }
+
+  .friendship-section {
+    padding: 30px 18px;
+  }
+
+  .friendship-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .polaroid {
+    flex: none;
+    width: 240px;
+    max-width: 100%;
+  }
+
+  .friendship-text {
+    text-align: center;
+  }
+
+  .friendship-signature {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+
+  .header-stats {
+    justify-content: center;
+  }
+
+  .botanical-illustration {
+    width: 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polaroid,
+  .theme-toggle {
+    transition: none;
+  }
+
+  .polaroid:hover {
+    transform: none;
+  }
+}

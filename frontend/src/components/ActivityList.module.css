@@ -1,0 +1,16 @@
+
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  justify-content: center;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+@media (max-width: 700px) {
+  .list {
+    grid-template-columns: minmax(0, 300px);
+    gap: 25px;
+  }
+}

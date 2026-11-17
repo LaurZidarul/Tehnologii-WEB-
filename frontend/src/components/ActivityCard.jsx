@@ -1,44 +1,59 @@
 
-const PRIORITY_LABELS = {
-  Low: "Low",
-  Medium: "Medium",
-  High: "High"
-};
+import { Link } from "react-router-dom";
+import { PRIORITY_LABELS } from "../constants.js";
+import styles from "./ActivityCard.module.css";
 
 export default function ActivityCard({ activity, onToggle, onDelete }) {
+  const priorityClass = {
+    Low: styles.priorityLow,
+    Medium: styles.priorityMedium,
+    High: styles.priorityHigh,
+  };
+
   return (
     <article
-      className={
-        activity.completed
-          ? "activity-card done"
-          : "activity-card"
-      }
+      className={`${styles.card} ${activity.completed ? styles.done : ""}`}
+      data-testid="item"
+      data-id={activity.id}
     >
-      <label className="activity-main">
+      <div className={styles.main}>
         <input
           type="checkbox"
           checked={activity.completed}
           onChange={() => onToggle(activity.id)}
+          aria-label={`Complete ${activity.name}`}
+          data-testid="item-toggle"
         />
 
-        <h3>{activity.name}</h3>
-      </label>
+        <Link
+          to={`/activities/${activity.id}`}
+          className={styles.titleLink}
+          data-testid="item-link"
+        >
+          <h3>{activity.name}</h3>
+        </Link>
+      </div>
 
-      <p className={`priority priority-${activity.priority.toLowerCase()}`}>
-        Priority: {PRIORITY_LABELS[activity.priority]}
+      <p
+        className={`${styles.priority} ${
+          priorityClass[activity.priority] || ""
+        }`}
+      >
+        Priority: {PRIORITY_LABELS[activity.priority] ?? activity.priority}
       </p>
 
-      <p className="status">
+      <p className={styles.status}>
         {activity.completed ? "Completed ✓" : "Active"}
       </p>
 
       <button
         type="button"
-        className="activity-delete"
+        className={styles.delete}
         onClick={() => onDelete(activity.id)}
         aria-label={`Delete ${activity.name}`}
+        data-testid="item-delete"
       >
-        Delete 
+        Delete
       </button>
     </article>
   );

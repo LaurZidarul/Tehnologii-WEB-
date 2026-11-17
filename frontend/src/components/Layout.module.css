@@ -1,0 +1,101 @@
+
+/* Etapa 8 - Navigare */
+
+.navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.link,
+.active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.link {
+  color: #526c58;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid #d5dfd1;
+}
+
+.link:hover {
+  background: #e3ecdf;
+  transform: translateY(-2px);
+}
+
+.active {
+  color: #ffffff;
+  background: #78947c;
+  border: 1px solid #78947c;
+}
+
+.active:hover {
+  background: #58745d;
+}
+
+.link:focus-visible,
+.active:focus-visible {
+  outline: 3px solid #b9849f;
+  outline-offset: 3px;
+}
+
+/* Dark mode */
+
+:global(:root[data-theme="dark"]) .link {
+  color: #d4e7cf;
+  background: #304435;
+  border-color: #526854;
+}
+
+:global(:root[data-theme="dark"]) .link:hover {
+  background: #405b46;
+}
+
+:global(:root[data-theme="dark"]) .active {
+  color: #1c2b20;
+  background: #aac6aa;
+  border-color: #aac6aa;
+}
+
+:global(:root[data-theme="dark"]) .active:hover {
+  background: #c1d7bc;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .navigation {
+    justify-content: center;
+  }
+
+  .link,
+  .active {
+    padding: 9px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .active {
+    transition: none;
+  }
+
+  .link:hover {
+    transform: none;
+  }
+}

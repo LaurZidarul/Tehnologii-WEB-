@@ -1,0 +1,10 @@
+
+{
+  "resource": "activities",
+  "title": "name",
+  "done": "completed",
+  "sample": {
+    "priority": "Medium",
+    "category": "Self-care"
+  }
+}

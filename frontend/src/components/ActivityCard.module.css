@@ -1,0 +1,215 @@
+
+/* Etapa 8 - ActivityCard */
+
+.card {
+  position: relative;
+  aspect-ratio: 1 / 1.08;
+  min-width: 0;
+  padding: 46px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  text-align: center;
+  background: #d5e4d0;
+  border: 1px solid #b8cdb4;
+  border-radius: 4% 78% 6% 78% / 5% 78% 6% 78%;
+  box-shadow: 0 12px 25px rgba(82, 107, 87, 0.11);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.card:nth-child(2n) {
+  background: #e4ebde;
+}
+
+.card:nth-child(3n) {
+  background: #c9dcc5;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 30px rgba(82, 107, 87, 0.18);
+}
+
+.card h3 {
+  margin: 0;
+  max-width: 190px;
+  color: #49674f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.card p {
+  margin: 0;
+  color: #526b57;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.main input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  padding: 0;
+  accent-color: #78947c;
+  cursor: pointer;
+}
+
+.priority {
+  display: inline-block;
+  max-width: 100%;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.priorityLow {
+  background: #edf5e8;
+  color: #42724b !important;
+  border: 1px solid #c5d9be;
+}
+
+.priorityMedium {
+  background: #f8e9ef;
+  color: #9d6782 !important;
+  border: 1px solid #e9cbd8;
+}
+
+.priorityHigh {
+  background: #f3dce6;
+  color: #9c5377 !important;
+  border: 1px solid #e6b9cc;
+}
+
+.status {
+  color: #58755e;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.delete {
+  width: auto;
+  min-height: 32px;
+  padding: 6px 14px;
+  background: #f8e5ed;
+  color: #a05d7a;
+  border: 1px solid #e9cbd8;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background: #edcfdd;
+  color: #864764;
+}
+
+.done {
+  background: #e8ede4;
+  border-color: #cbd7c7;
+  box-shadow: 0 8px 18px rgba(82, 107, 87, 0.07);
+}
+
+.done h3 {
+  color: #7d917f;
+  text-decoration: line-through;
+}
+
+.done .status {
+  color: #718774;
+}
+
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.titleLink:hover {
+  text-decoration: underline;
+}
+
+.titleLink:focus-visible {
+  outline: 3px solid #b9849f;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Dark mode */
+
+:global(:root[data-theme="dark"]) .card {
+  background: #3b5540;
+  border-color: #59745d;
+}
+
+:global(:root[data-theme="dark"]) .card h3,
+:global(:root[data-theme="dark"]) .card p,
+:global(:root[data-theme="dark"]) .card .status {
+  color: #e5f0df;
+}
+
+:global(:root[data-theme="dark"]) .done {
+  background: #344539;
+  border-color: #526854;
+}
+
+:global(:root[data-theme="dark"]) .done h3,
+:global(:root[data-theme="dark"]) .done .status {
+  color: #b7cbb4;
+}
+
+:global(:root[data-theme="dark"]) .priorityLow {
+  background: #284331;
+  color: #b8dfbd !important;
+  border-color: #55745b;
+}
+
+:global(:root[data-theme="dark"]) .priorityMedium {
+  background: #543c4b;
+  color: #f4c8da !important;
+  border-color: #785569;
+}
+
+:global(:root[data-theme="dark"]) .priorityHigh {
+  background: #653b51;
+  color: #ffd0e1 !important;
+  border-color: #87566e;
+}
+
+:global(:root[data-theme="dark"]) .delete {
+  background: #543c4b;
+  color: #f4c8da;
+  border-color: #785569;
+}
+
+:global(:root[data-theme="dark"]) .delete:hover {
+  background: #69495c;
+  color: #ffe3ef;
+}
+
+/* Responsive */
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

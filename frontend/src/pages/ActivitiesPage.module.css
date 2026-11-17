@@ -1,0 +1,38 @@
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 36px;
+  width: 100%;
+}
+
+.content > section {
+  min-width: 0;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    gap: 24px;
+  }
+
+  .stats {
+    gap: 8px;
+    margin: 12px 0 20px;
+  }
+}
